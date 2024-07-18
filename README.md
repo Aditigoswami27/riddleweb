@@ -7,6 +7,14 @@ Features :
  1. Random Riddles: Fetches a random riddle from a public API each time the page is loaded.
  2. Check Answer: Allows users to reveal the answer to the current riddle.
  3. Next Riddle: Users can proceed to the next riddle by clicking a button.
+ 4. Session Management: Utilizes session state to store the current riddle and answer, ensuring a seamless user experience even when navigating between pages.
+
+Session State Management :
+ Session Setup: The application uses express-session middleware to manage session state. A secret key ensures the session data is secure.
+ 
+ Riddle Fetching: When a user visits the site, a middleware function checks if a riddle is already stored in the session. If not, it fetches a new riddle from the API and stores it in the session.
+ 
+ Persistent State: The session keeps track of the current riddle and its answer, allowing users to check the answer or fetch a new riddle without losing the current state.
 
 Technologies Used :
 Node.js
